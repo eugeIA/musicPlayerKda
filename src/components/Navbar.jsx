@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { reducerCases } from "../utils/Constants";
-// import Search from "./Search";
+
 import SpotifyWebApi from "spotify-web-api-node";
 import { IoPersonCircleOutline, IoSearch,IoMenu } from "react-icons/io5";
 import { useStateProvider } from "../utils/StateProvider";
@@ -15,40 +15,9 @@ function Navbar() {
   console.log(tracks);
 
   console.log(setSearchInput);
-  // const spotifyApi=new SpotifyWebApi({clientId:"4c73eec8758b4686ad313c2f504b9c75"})
+ 
   useEffect(() => {
-    // const search = async () => {
-    //   const searchparams = {
-    //     method: "GET",
-    //     headers: {
-    //       Authorization: "Bearer " + token,
-    //       "Content-Type": "application/json",
-    //     },
-    //   };
-    //   let getArtistId = await fetch(
-    //     "https://api.spotify.com/v1/search?q=" + searchInput + "&type=artist",
-    //     searchparams
-    //   )
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //       console.log(data);
-    //       return data.artists.items[0].id;
-    //     });
-    //   fetch(
-    //     "https://api.spotify.com/v1/artists/" +
-    //       getArtistId +
-    //       "/albums" +
-    //       "?include_groups=album&market=CA",
-    //     searchparams
-    //   )
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //       console.log(data);
-    //       dispatch({ type: reducerCases.SET_SEARCH, albums: data.items });
-    //     });
-
-    // };
-    // search();
+    
     const search = async () => {
       spotifyApi.setAccessToken(token);
       spotifyApi

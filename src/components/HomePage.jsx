@@ -233,17 +233,19 @@ const Container = styled.div`
        
         .row{
           text-align:left;
-          padding-left:2.5px;
-          padding-right:2.5px;
+          padding-left:5px;
+          
           padding-top:10px;
-          box-shadow:1px 1px 1px 1px #D9D9D9;
+          box-shadow:1px 1px 5px  #D9D9D9;
+          box-sizing:border-box;
           border-radius:10px;
+          width:15vw;
           cursor:pointer;
           font-size:smaller;
           .col__detail{
             .image{
               img{
-                width:15vw;
+                width:14vw;
                 height:25vh;
                 border-radius:10px;
               }
@@ -254,17 +256,21 @@ const Container = styled.div`
                 align-self:center;
               }
               .info{
+                box-sizing:border-box;
                 flex-grow:2;
                 padding-left:3px;
+                overflow:hidden;
                 .name{
                   font-weight:bold;
                   font-size:smaller;
                   margin-right:1px;
                   margin-top:2px;
+                  text-overflow:ellipsis;
                 }
                 .artist__name{
                    font-size:smaller;
                    margin-top:-5px;
+                   text-overflow:ellipsis;
                 }
                 .hit__duration{
                    margin-top:-5px;
