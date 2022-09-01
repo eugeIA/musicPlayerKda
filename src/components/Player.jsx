@@ -32,12 +32,12 @@ function Player() {
         bgColor : 'white' , 
         color : '#f0260f' , 
         loaderColor : '#f0260f' , 
-        sliderColor : '#1cb954' , 
+        sliderColor : '#f0260f' , 
         trackArtistColor : '#f0260f' , 
         trackNameColor : 'black' , 
         
       } } 
-      token={"BQDQzJ1RdUVyjAl6QSHr67O45j792UTmNuzrwsZGkCAcMi9HgEOQYve3s2TevnzPPrZnYnbVqi9bxJHXQAGOrY6BAlCc8nXFSbdBjw9Otj5qC5I8-B71hHpYB8mInHB_NmmQ9-9qZXp2qnwueXtUiRbDaxs2Toii6HJRZUkWXZZ6mKJHkLp6UMRTNw87mrLIRk8vlJKGCj_kCMOoj7AegdfDquP0BIyAChRnKtE0xGPWI6y5ZUOIwq3We4iYn8u4_oqybndnTh7k0ojRnvB5y3_HJqQd4q0be6wGG0i5xa41b30P63Shu62X-199pfcq_uWboLzT-LrRb9ZLIrg"}
+      token={token}
       uris={[`${contextUri}`]}
       // uris={Array.isArray(contextUri) ? contextUri : [`${contextUri}`]}
       />
