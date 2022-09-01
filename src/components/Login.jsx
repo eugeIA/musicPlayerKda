@@ -39,7 +39,7 @@ export default function Login() {
 }
  
 const Container=styled.div`
-    background-image:url(" href='https://fr.freepik.com/vecteurs/fond-pastel'>Fond pastel vecteur créé par Hello-Pixel - fr.freepik.com");
+   
     padding-top:25vh;
     text-align:center;
     .soundhouse_first_page{
@@ -68,5 +68,20 @@ const Container=styled.div`
         font-size:150%;
       }
     }
+@media only screen and (max-width: 500px){
+  .soundhouse_first_page{
+    button{
+        padding:10px 5px;
+        background-color:#f0260f;
+        border-radius:35px;
+        color:white;
+        border-color:#f0260f;
+        cursor:pointer;
+        font-size:150%;
+        width:50vw;
+        height:10vh;
+      }
+    }
+}
     
 `

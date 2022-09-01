@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { reducerCases } from "../utils/Constants";
 // import Search from "./Search";
 import SpotifyWebApi from "spotify-web-api-node";
-import { IoPersonCircleOutline, IoSearch } from "react-icons/io5";
+import { IoPersonCircleOutline, IoSearch,IoMenu } from "react-icons/io5";
 import { useStateProvider } from "../utils/StateProvider";
 import { useNavigate } from "react-router-dom";
 
@@ -68,6 +68,7 @@ function Navbar() {
   }
   return (
     <Container>
+      <div className="menu__navbar"><IoMenu /></div>
       <h2 className="app_title">
         <span className="sound">Sound</span>House
       </h2>
@@ -82,8 +83,9 @@ function Navbar() {
         />
         {/* <Search /> */}
       </div>
+      <div className="search__icon__navbar" onClick={handleClick}><IoSearch /></div>
       <div className="name_user">
-        <IoPersonCircleOutline />
+        <IoPersonCircleOutline className="profil__icon"/>
         <div className="username">{userInfo?.username}</div>
       </div>
     </Container>
@@ -93,6 +95,9 @@ function Navbar() {
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
+  .menu__navbar{
+    display:none;
+  }
   h2 {
     align-self: center;
     margin-top: -0.1px;
@@ -136,6 +141,39 @@ const Container = styled.div`
     }
     .username {
       font-size: larger;
+    }
+  }
+  .search__icon__navbar{
+    display:none;
+  }
+  @media only screen and (max-width: 500px){
+    .menu__navbar{
+      display:block;
+      font-size:250%;
+      margin-top:-5px;
+    }
+    h2 {
+     align-self:center;
+     margin-right:15vw;
+     font-size:175%;
+   }
+    .home__page__search__bar{
+      display:none;
+    }
+    .search__icon__navbar{
+      display:block;
+      font-size:200%;
+      margin-right:5px;
+    }
+    .name_user {
+     font-size:100%;
+     .profil__icon{
+       font-size:250%;
+       margin-top:-20px;
+     }
+     .username {
+      display:none;
+    }
     }
   }
 `;

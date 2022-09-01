@@ -171,7 +171,7 @@ const Container = styled.div`
     border-radius:10px;
     justify-content:space-between;
     padding-left:10px;
-    marin-top:-5px;
+    margin-top:-5px;
     height:40vh;
     .image__home__page__cart{
   
