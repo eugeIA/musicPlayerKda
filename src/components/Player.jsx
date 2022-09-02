@@ -1,21 +1,15 @@
 
-import React, { useEffect } from "react";
+import React, { useState,useEffect } from "react";
 import styled from "styled-components";
 import SpotifyPlayer from "react-spotify-web-playback";
 import { useStateProvider } from "../utils/StateProvider";
-import {reducerCases} from "../utils/Constants"
+// import {reducerCases} from "../utils/Constants"
 function Player() {
-  const[{token,contextUri},dispatch]=useStateProvider();
+  const[{contextUri}]=useStateProvider();
+  const[playing,setPlaying]=useState(false)
   useEffect(()=>{
-    dispatch(
-      {
-        type: reducerCases.SET_CONTEXTURI, contextUri
-      },
-      
-    )
-  },[token,dispatch]
-
-  
+     setPlaying(true)
+  },[contextUri]  
   )
 
   // const playItem = () => {
@@ -27,6 +21,11 @@ function Player() {
     <Container>
       <SpotifyPlayer 
        className="web__playback"
+       play={playing}
+       callback={(state)=>{
+         state.isPlaying?setPlaying(true):setPlaying(false)
+         console.log(state)
+       }}
        styles = { { 
         activeColor : '#f0260f' , 
         bgColor : 'white' , 
@@ -37,7 +36,7 @@ function Player() {
         trackNameColor : 'black' , 
         
       } } 
-      token={token}
+      token={"BQDfJbIFJJ2aPgX9ePWVIvUk9TRRhR75ARqGMjAixjHiIWeKcL6JdqPdt7lns6tRHFRG_kWl5Sy9_WhUJvXEm6b_GfwO35b-hpHAJR8jfl6PtYWRCAnTOOBUxinAy7W1X0WGvnE_dh015HRUTL8mwx6McQXuOBJQTw2Y8iuR8J9yYm3ZgXg0ARonyeJC22_pymaTQo2zHFVMypHeI78eLsTtRzQCQtrmHHwLQy3SwdQ_itmrGmUSrKDzskKEm-i-tn2Tj59enyfERqKgw_Tq3WezUMQPsRYNoD7OfY7CfvTcWQLZ1d4gcNJmE0djwCFNpEMDSs7_CzXE5g9-YUA"}
       uris={[`${contextUri}`]}
       // uris={Array.isArray(contextUri) ? contextUri : [`${contextUri}`]}
       />

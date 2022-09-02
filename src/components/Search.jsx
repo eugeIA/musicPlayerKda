@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { useStateProvider } from "../utils/StateProvider";
-// import { reducerCases } from "../utils/Constants";
+import { reducerCases } from "../utils/Constants";
 import { IoEllipsisVertical } from "react-icons/io5";
 // import SpotifyWebApi from "spotify-web-api-node";
 
 function Search() {
   // const [searchInput, setSearchInput] = useState("");
-  const [{ tracks }] = useStateProvider();
+  const [{ tracks },dispatch] = useStateProvider();
   
   // const [albums, setAlbums] = useState([]);
   
@@ -75,7 +75,9 @@ function Search() {
       <div className="search__result__body">
         {tracks.map((track) => {
           return (
-            <div key={track.id} className="search__results__cart">
+            <div key={track.id} className="search__results__cart" onClick={() => {
+              dispatch({type: reducerCases.SET_CONTEXTURI, contextUri: track.uri})
+            }}>
               <img src={track.album.images[0].url} alt="" className="albums__image" />
               <div className="album__description">
                 <div className="track__name__duration">

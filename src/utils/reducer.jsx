@@ -11,6 +11,7 @@ export const initialState = {
   track:[],
   top_items:[],
   tracks:[],
+
   
 };
 
@@ -84,6 +85,7 @@ const reducer = (state, action) => {
         ...state,
         tracks:action.tracks,
       }
+   
     default:
       return state;
   }

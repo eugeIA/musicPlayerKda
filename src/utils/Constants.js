@@ -11,4 +11,5 @@ export const reducerCases = {
   SET_CONTEXTURI:"SET_CONTEXTURI",
   SET_LIKEDURI:"SET_LIKEDURI",
   SET_TOP_ITEMS:"SET_TOP_ITEMS",
+ 
 };

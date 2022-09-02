@@ -10,9 +10,10 @@ import { useNavigate } from "react-router-dom";
 function Navbar() {
   const [{ userInfo }] = useStateProvider();
   const [searchInput, setSearchInput] = useState("");
-  const [{ token, tracks }, dispatch] = useStateProvider();
+  const [{ token, tracks,resultURI }, dispatch] = useStateProvider();
   const spotifyApi = new SpotifyWebApi();
   console.log(tracks);
+  console.log(resultURI)
 
   console.log(setSearchInput);
  
