@@ -5,7 +5,7 @@ import SpotifyPlayer from "react-spotify-web-playback";
 import { useStateProvider } from "../utils/StateProvider";
 // import {reducerCases} from "../utils/Constants"
 function Player() {
-  const[{contextUri}]=useStateProvider();
+  const[{contextUri,token}]=useStateProvider();
   const[playing,setPlaying]=useState(false)
   useEffect(()=>{
      setPlaying(true)
@@ -36,7 +36,7 @@ function Player() {
         trackNameColor : 'black' , 
         
       } } 
-      token={"BQDfJbIFJJ2aPgX9ePWVIvUk9TRRhR75ARqGMjAixjHiIWeKcL6JdqPdt7lns6tRHFRG_kWl5Sy9_WhUJvXEm6b_GfwO35b-hpHAJR8jfl6PtYWRCAnTOOBUxinAy7W1X0WGvnE_dh015HRUTL8mwx6McQXuOBJQTw2Y8iuR8J9yYm3ZgXg0ARonyeJC22_pymaTQo2zHFVMypHeI78eLsTtRzQCQtrmHHwLQy3SwdQ_itmrGmUSrKDzskKEm-i-tn2Tj59enyfERqKgw_Tq3WezUMQPsRYNoD7OfY7CfvTcWQLZ1d4gcNJmE0djwCFNpEMDSs7_CzXE5g9-YUA"}
+      token={token}
       uris={[`${contextUri}`]}
       // uris={Array.isArray(contextUri) ? contextUri : [`${contextUri}`]}
       />

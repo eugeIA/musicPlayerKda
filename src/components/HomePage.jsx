@@ -45,49 +45,7 @@ function HomePage() {
     getInitialPlaylist();
   }, [token, selectedPlaylistId,contextUri, dispatch]);
 
-  // const playTrack = async (
-  //   id,
-  //   name,
-  //   artists,
-  //   image,
-  //   context_uri,
-  //   track_number
-  // ) => {
-  //   const response = await axios.put(
-  //     `https://api.spotify.com/v1/me/player/play`,
-  //     {
-  //       context_uri,
-  //       offset: {
-  //         position: track_number - 1,
-  //       },
-  //       position_ms: 0,
-  //     },
-  //     {
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         Authorization: "Bearer " + token,
-  //       },
-  //     }
-  //   );
-  //   if (response.status === 204) {
-  //     const currentlyPlaying = {
-  //       id,
-  //       name,
-  //       artists,
-  //       image,
-  //     };
-  //     dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying });
-  //     dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: true });
-  //   } else {
-  //     dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: true });
-  //   }
-  // };
-
-  // const msToMinutesAndSecons = (ms) => {
-  //   const minutes = Math.floor(ms / 60000);
-  //   const seconds = ((ms % 60000) / 1000).toFixed(0);
-  //   return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-  // };
+  
   return (
     <Container>
       <h2 className="homePage__title">Home</h2>
@@ -120,14 +78,7 @@ function HomePage() {
                             dispatch({type: reducerCases.SET_CONTEXTURI, contextUri})
                             console.log(contextUri)
                           }
-                            // playTrack(
-                            //   id,
-                            //   name,
-                            //   artists,
-                            //   image,
-                            //   context_uri,
-                            //   track_number
-                            // )
+                            
                           }>
                       
                       <div className="col__detail">
@@ -221,7 +172,6 @@ const Container = styled.div`
     margin-bottom:15px;
     h3{
       color:#08033f;
-      margin-bottom:-2px;
       font-size:100%;
     }
     .list{

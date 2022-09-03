@@ -27,11 +27,11 @@ function Liked(){
                     image = [...images]}
               return {id, name, image, duration_ms, uri};
             });
-            dispatch({ type: reducerCases.SET_LIKEDURI, uri })
+            
             dispatch({ type: reducerCases.SET_TOP_ITEMS, top_items })
-            // console.log(playlists)
+        
             console.log(response.data);
-            // dispatch({ type: reducerCases.SET_PLAYLISTS, playlists });
+          
           };
           getTopTracks();
     }
@@ -47,7 +47,7 @@ function Liked(){
         <Container>
            {top_items.map(({id, name, image, duration_ms, uri}) => {
           return <div key={id} 
-                     onClick={() => {dispatch({ type: reducerCases.SET_LIKEDURI, uri })}}
+                     onClick={() => dispatch({type: reducerCases.SET_CONTEXTURI, contextUri: uri})}
                      className="playlist__item">
                     <div className="liked_item_image"><img src={image[2].url} alt="track" /></div>
                     <div className="song__description">
@@ -73,6 +73,7 @@ const Container=styled.div`
     .playlist__item{
       display:flex;
       margin-top:10px;
+      cursor:pointer;
       .song__description{
         padding-right:20px;
         flex-grow:3;

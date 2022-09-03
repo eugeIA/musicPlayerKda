@@ -10,9 +10,7 @@ export const initialState = {
   playerState: false,
   track:[],
   top_items:[],
-  tracks:[],
-
-  
+  tracks:[],  
 };
 
 const reducer = (state, action) => {

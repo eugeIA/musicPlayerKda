@@ -3,67 +3,12 @@ import styled from "styled-components";
 import { useStateProvider } from "../utils/StateProvider";
 import { reducerCases } from "../utils/Constants";
 import { IoEllipsisVertical } from "react-icons/io5";
-// import SpotifyWebApi from "spotify-web-api-node";
+
 
 function Search() {
-  // const [searchInput, setSearchInput] = useState("");
+ 
   const [{ tracks },dispatch] = useStateProvider();
   
-  // const [albums, setAlbums] = useState([]);
-  
-  //  console.log(setSearchInput)
-  //  console.log(setAlbums)
-  // // const spotifyApi=new SpotifyWebApi();
-  // useEffect(() => {
-  //   // const search=async () =>{
-  //   //   spotifyApi.setAccessToken(token)
-  //   //   let getSongs=spotifyApi.searchTracks(searchInput)
-  //   //     .then((response)=>response.json())
-  //   //     .then(
-  //   //       (data)=>{setAlbums(data.tracks.items)}
-  //   //     )
-  //   //    console.log(getSongs) 
-  //   // }
-   
-  //   // search()
-  //   const search = async () => {
-  //     const searchparams = {
-  //       method: "GET",
-  //       headers: {
-  //         Authorization: "Bearer " + token,
-  //         "Content-Type": "application/json",
-  //       },
-  //     };
-  //     let getArtistId = await fetch(
-  //       "https://api.spotify.com/v1/search?q=" + searchInput + "&type=artist",
-  //       searchparams
-  //     )
-  //       .then((response) => response.json())
-  //       .then((data) => {
-  //         console.log(data);
-  //         return data.artists.items[0].id
-  //       });
-  //     let getAlbums = await fetch(
-  //       "https://api.spotify.com/v1/artists/" + getArtistId + "/albums" + "?include_groups=album&market=CA",
-  //       searchparams
-  //     )
-  //       .then((response) => response.json())
-  //       .then((data) => {
-  //         console.log(data);
-  //         setAlbums(data.items);
-  //       });
-      
-        
-        
-  //     console.log(getAlbums);
-     
-      
-
-  //     dispatch({ type: reducerCases.SET_SEARCH, albums });
-  //   };
-  //   search();
-  // }, [token, searchInput,dispatch]);
-  // console.log(albums);
   const times = (ms) => {
       const minutes = Math.floor(ms / 60000);
       const seconds = ((ms % 60000) / 1000).toFixed(0);
